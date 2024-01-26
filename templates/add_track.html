@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Add New Track {% endblock %}
+{% set active_page = "add" %}
+{% block content %}
+    <h3>
+        What is your Question
+    </h3>
+
+    <form action="/add/track" method="POST" id="AskForm">
+        <div class="form-group">
+            <label for="track_name">Input Your Question</label>
+            <input type="text" class="form-control" id="question_itself" name="question" placeholder="Track Name">
+        </div>
+        <br />
+        <!-- 问题提交按钮，种类是提交-->
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- 问题清空按钮-->
+        <!-- onclick="clearForm() 是代表点击的时候调用clearForm这个函数-->
+        <button type="button" class="btn btn-primary" onclick="clearForm()">Clear</button>
+    </form>
+
+
+    <!-- 清空函数-->
+    <script>
+        function clearForm() {
+            document.getElementById("AskForm").reset();
+        }
+    </script>
+{% endblock %}
